@@ -1,8 +1,10 @@
+#Последовательная выдача ключей из словаря:
 elements = [
     {'title': None, 'color': 'red', 'title': 'ololo'},
     {'title': 'Ковер', 'price': 2000, 'color': 'green'},
     {'title': 'Диван для отдыха', 'color': 'black'}
 ]
+
 
 def fild_generator(list, *args):
     #Если аргументов несколько:
@@ -22,6 +24,7 @@ def fild_generator(list, *args):
              if value != None: yield value
     else: raise Exception('No arguments in fild_generator!')
     
+
 #Проверка:
 if __name__ == '__main__':
     f = fild_generator(elements, 'title', 'price', 'color')

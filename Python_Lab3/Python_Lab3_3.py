@@ -1,3 +1,4 @@
+#Пропуск дубликатов:
 import inspect
 class Unique:
     def __init__(self, Item, **kwargs):
@@ -23,7 +24,7 @@ class Unique:
             try: Got_item = next(self.item)
             except: raise StopIteration
         
-        if Got_item in self.elements_list: return
+        if Got_item in self.elements_list: self.__next__
         elif not self.ignore_case:#
             self.elements_list.append(Got_item)
             return Got_item
@@ -42,6 +43,7 @@ class Unique:
 
     def __iter__(self):
         return self
+
 
 #Проверка:
 if __name__ == '__main__':
