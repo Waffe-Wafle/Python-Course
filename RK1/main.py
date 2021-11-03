@@ -1,5 +1,5 @@
 from Rk1_Classes import *
-
+from os import system
 def main():
     S = Storage()
     
@@ -53,5 +53,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+    system("pause")
 
 
