@@ -1,6 +1,7 @@
 #Последовательная выдача ключей из словаря:
+from os import system
 elements = [
-    {'title': None, 'color': 'red', 'title': 'ololo'},
+    {'title': None, 'color': 'red', 'title': 'some_title'},
     {'title': 'Ковер', 'price': 2000, 'color': 'green'},
     {'title': 'Диван для отдыха', 'color': 'black'}
 ]
@@ -34,3 +35,4 @@ if __name__ == '__main__':
     f = fild_generator(elements, 'title')
     for i in f:
         print(i)
+    system('pause')

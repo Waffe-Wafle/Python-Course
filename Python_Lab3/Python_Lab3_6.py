@@ -1,7 +1,7 @@
 #Расчет времени исполнения:
 from contextlib import contextmanager
 from time import time; from time import sleep
-
+from os import system
 
 #Для нормального человеческого округления:
 def normal_people_round(number, ndigits=0):
@@ -42,15 +42,13 @@ class Timer():
         proces_time = time() - self.time_start
         print('\nЗатрачено: ', normal_people_round(proces_time, self.ndigits), ' c')
   
- 
 
 def test(n=5):
         times = 0
         while True:
             print("f")
             times += 1
-            if times > n:
-                break
+            if times > n: break
    
             
 if __name__ == "__main__":
@@ -59,3 +57,4 @@ if __name__ == "__main__":
 
     with Timer(8):
         sleep(1.5)
+    system('pause')

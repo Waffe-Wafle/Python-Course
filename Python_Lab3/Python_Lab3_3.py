@@ -1,5 +1,6 @@
 #Пропуск дубликатов:
 import inspect
+from os import system
 class Unique:
     def __init__(self, Item, **kwargs):
         if type(Item) != list and inspect.isgenerator(Item) == False: 
@@ -20,11 +21,12 @@ class Unique:
             if len(self.item) <= self.i: raise StopIteration
             Got_item = self.item[self.i]
             self.i+=1
+        #Если использовался генератор:
         else:
             try: Got_item = next(self.item)
             except: raise StopIteration
         
-        if Got_item in self.elements_list: self.__next__
+        if Got_item in self.elements_list: return
         elif not self.ignore_case:#
             self.elements_list.append(Got_item)
             return Got_item
@@ -48,7 +50,7 @@ class Unique:
 #Проверка:
 if __name__ == '__main__':
     from Python_Lab3_2 import random_generator
-    listik = [1, 2, 3, '[fkzdf', '[fkzdf', 'халява', 'А', 'а']
+    listik = [1, 2, 3, 'HI', 'hi', 'some_text', 'А', 'а']
     G = random_generator(10,1,5) 
     d1 = Unique(G, ignor_case = True)
     d2 = Unique(listik, ignor_case = True)
@@ -57,3 +59,4 @@ if __name__ == '__main__':
     print('\n\n')
     for i in d2:
         print(i)
+    system('pause')

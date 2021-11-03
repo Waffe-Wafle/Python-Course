@@ -1,10 +1,13 @@
 #Декоратор вывода:
+from os import system
 def print_result(function):
     def wrapper(x):
         print('Исполняется: ' + str(function.__name__) + '\n')
         result = function(x)
         if isinstance(result, list): 
-            for i in result: print(i)
+            for i in result: 
+                if isinstance(i, zip): print(str(list(i)).strip('()[]').replace("'",""))
+                else: print(i)
         elif isinstance(result, dict):
             res_touple = result.fromkeys
             for i in result: print(res_touple[0] + ' = ' + res_touple[1])
@@ -22,5 +25,5 @@ def Test(x):
 if __name__ == '__main__':
    test = print_result(Test)
    A = test(10)
-   print('\n', A)
-   
+   print('\n' + str(A))
+   system('pause')
