@@ -1,6 +1,6 @@
 from unittest import TestCase
 from random import randint
-from Rk2 import *
+from main import *
 from os import system
 
 #Класс дирижера:
@@ -220,4 +220,3 @@ class Test_of_check_conductures_first_letter(TestCase):
                     num2 += 1
             Test_of_check_conductures_first_letter.assertTrue(self, num1==num2)
         print("Ok", end="")
-
